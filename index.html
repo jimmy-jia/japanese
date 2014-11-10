@@ -1,0 +1,71 @@
+<!doctype HTML>
+<html>
+	<head>
+		<title>Japanese Language Program at UIUC</title>
+		<meta charset="utf-8">
+		<link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+		<link href="stylesheet.css" rel="stylesheet" type="text/css">
+		<link rel="icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	</head>
+	<body>
+		<div class="wrapper">
+		<div class="sidebar">
+			<a href="#" id="illini"><img src="logo.gif"></a>
+			<div class="vertical"></div>
+			<ul class="linkbar">
+				<li><a href="#">Home</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="placement.html">Placement Test</a></li>
+				<li><a href="courses.html">Courses</a></li>
+				<li><a href="resources.html">Resources</a></li>
+				<li><a href="japan.html">About Japan</a></li>
+				<li><a href="studyinjpn.html">Study in Japan</a></li>
+				<li><a href="http://www.ealc.illinois.edu/">EALC</a></li>
+			</ul>
+		</div>
+		<div class="header">
+			<div id="title">
+				<p id="t_eng">The Japanese Language Program</p>
+				<p id="t_uni">University of Illinois at Urbana Champaign</p>
+				<p id="t_jpn">イ リ ノイ大学日本語プログラムへようこそ！</p>
+			</div>
+			<div class="horizontal"></div>
+		</div>
+		<div class="inner">
+			<div class="innertext">
+				<p>The Japanese language program at the University of Illinois at Urbana-Champaign (UIUC) 	offers language courses of four levels from elementary to fourth-year.  While each focusing on particular skill areas, all courses aim at developing comprehensive language ability that enables culturally-appropriate behaviors and communication.</p>
+			</div>
+			<p class="innertext">Events</p>
+			<div id="displaynews">
+
+
+			</div>
+		</div>
+		<script>
+			var myDataRef = new Firebase('https://uiuc-jpn.firebaseio.com/');
+			myDataRef.on('child_added', function(snapshot) {
+				var message = snapshot.val();
+				displayChatMessage(message.name, message.text);
+			});
+			function displayChatMessage(name, text) {
+		        $('<div/>').prepend($('<em/>').text(name+': ')).appendTo($('#displaynews'));
+		        $('<div/>').text(text).appendTo($('#displaynews'));
+		        $('#displaynews')[0].scrollTop = $('#displaynews')[0].scrollHeight;
+		        $('<br>').appendTo($('#displaynews'));
+      		};
+		</script>
+		<div class="push"></div>
+		</div>
+		<div class="footer">
+			<p>Japanese Language Program<br>
+			Department of East Asian Languages and Cultures<br>
+			University of Illinois at Urbana Champaign<br>
+			2090 Foreign Language Building, 707 S. Mathews, Urbana, IL 61801</p>
+
+		</div>
+	</body>
+</html>

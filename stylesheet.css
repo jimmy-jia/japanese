@@ -321,8 +321,6 @@ input[type=text]{
         height: 65px;
         border-radius: 5px;
         background: #222222;
-		/*background: linear-gradient(135deg, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%);
-        border: 1px solid #151515;*/
         border-bottom: 0px solid #777;
         color: #282D31;
         font-weight: bold;
@@ -336,8 +334,6 @@ input[type=text]{
 		color:white;
 	}
 	.parent:hover, .content:hover ~.parent{
-		/*background:#353535;
-		background: linear-gradient(160deg, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* W3C */
 		-webkit-transition-delay:0s, 0s, 0s;
 	}
 	.content:hover ~.parent{
@@ -411,5 +407,8 @@ input[type=text]{
 	.footer{
 		width:100%;
 		height:auto;
+	}
+	.instructors{
+		display:block;
 	}
 }

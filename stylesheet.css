@@ -166,7 +166,7 @@ li a:hover{
 .instructors{
 	margin-top:20px;
 	width:40%;
-	height:350px;
+	height:auto;
 	display:flex;
 	flex-wrap:wrap;
 	justify-content:center;
@@ -210,8 +210,12 @@ input[type=text]{
 	display:none;
 }
 @media print, screen and (max-width:1260px) {
+	.inner{
+		width:80%;
+		float:right;
+	}
 	.sidebar{
-		width:10em;
+		width:20%;
 		border-right:5px solid #c5c5c5;
 	}
 	.sidebar ul li a{
@@ -221,8 +225,16 @@ input[type=text]{
 		height:auto;
 		width:60%;
 	}
+	.footer{
+		width:80%;
+		height:100px;
+	}
 }
 @media print, screen and (max-width:800px){
+	.inner{
+		width:auto;
+		float:none;
+	}
 	.sidebar{
 		position:static;
 		width: 100%;
@@ -345,5 +357,6 @@ input[type=text]{
 	}
 	.footer{
 		width:100%;
+		height:auto;
 	}
 }
